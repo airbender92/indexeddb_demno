@@ -1,17 +1,22 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+   indexed DB
+   <div v-for="(demo, name) in demos" :key="name">
+     <button @click="demo">{{ name }}</button>
+   </div>
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import {demos} from './demos.js';
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  data() {
+    return {
+      demos
+    }
   }
 }
 </script>
