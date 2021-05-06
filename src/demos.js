@@ -227,7 +227,7 @@ A transaction will auto commit itself when it runs out of things to do, `transac
             upgrade: async (db, oldVersion, newVersion, transaction) => {
                 switch (oldVersion) {
                     case 0:
-                        upgrafeDB3fromV0toV1();
+                        upgradeDB3fromV0toV1();
                     // falls through
                     case 1:
                         upgradeDB3fromV1toV2();
@@ -354,6 +354,7 @@ A transaction will auto commit itself when it runs out of things to do, `transac
 
         // keep moving until the end of the store
         // look for cats with strength and speed both greater than 8
+        /* eslint-disable no-constant-condition */
         while (true) {
             const { strength, speed } = cursor.value;
             if (strength >= 8 && speed >= 8) {
